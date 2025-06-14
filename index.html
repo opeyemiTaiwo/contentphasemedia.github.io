@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Content Phase Media Uganda Limited</title>
+  <meta content="Lighting Up Uganda, One Billboard at a Time - Transform your brand with impactful outdoor advertising solutions" name="description">
+  <meta content="outdoor advertising, digital billboards, static billboards, Uganda, Kampala, brand visibility, marketing campaigns" name="keywords">
+
+  <!-- Favicons -->
+  <link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23e74c3c'>C</text></svg>" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css" rel="stylesheet">
+
+  <style>
+    /* Custom CSS for Content Phase Media */
+    :root {
+      --primary-color: #e74c3c;
+      --secondary-color: #2c3e50;
+      --accent-color: #f39c12;
+      --light-bg: #f8f9fa;
+      --dark-bg: #1a1a1a;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+    }
+
+    .logo img {
+      max-height: 40px;
+    }
+
+    /* Header */
+    #header {
+      background: rgba(44, 62, 80, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 0;
+      box-shadow: 0 2px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      z-index: 997;
+    }
+
+    #header.header-scrolled {
+      background: rgba(44, 62, 80, 0.98);
+      box-shadow: 0 2px 35px rgba(0,0,0,0.15);
+    }
+
+    .header-container {
+      padding: 15px 0;
+    }
+
+    /* Logo */
+    .logo {
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .logo-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      background: linear-gradient(45deg, #ffffff, var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: all 0.3s ease;
+      text-shadow: 0 2px 10px rgba(255,255,255,0.1);
+      letter-spacing: -1px;
+    }
+
+    .logo:hover .logo-text {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, var(--accent-color), #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Navbar */
+    .navbar {
+      padding: 0;
+    }
+
+    .navbar ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar li {
+      position: relative;
+    }
+
+    .navbar a,
+    .navbar a:focus {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .navbar a:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(45deg, var(--accent-color), #e67e22);
+      transition: width 0.3s ease;
+      z-index: -1;
+    }
+
+    .navbar a:hover:before,
+    .navbar .active:before {
+      width: 100%;
+    }
+
+    .navbar a:hover,
+    .navbar .active,
+    .navbar .active:focus,
+    .navbar li:hover > a {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .navbar .getstarted,
+    .navbar .getstarted:focus {
+      background: linear-gradient(45deg, var(--accent-color), #e67e22);
+      color: white;
+      border-radius: 30px;
+      margin-left: 15px;
+      padding: 12px 25px;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .navbar .getstarted:before {
+      background: linear-gradient(45deg, #e67e22, var(--primary-color));
+    }
+
+    /* About Section */
+    .about {
+      padding: 80px 0;
+    }
+
+    .about-icon-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
+      border-radius: 20px;
+      border: 3px solid var(--primary-color);
+      transition: all 0.5s ease;
+      box-shadow: 0 15px 40px rgba(231, 76, 60, 0.1);
+    }
+
+    .about-icon-container:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 60px rgba(231, 76, 60, 0.2);
+      border-color: var(--accent-color);
+    }
+
+    .about-icon-container i {
+      font-size: 100px;
+      color: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .about-icon-container:hover i {
+      color: var(--accent-color);
+      transform: scale(1.1);
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav-toggle {
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+      display: none;
+      line-height: 0;
+      transition: 0.5s;
+      border: none;
+      background: none;
+      padding: 0;
+    }
+
+    .mobile-nav-toggle:hover {
+      color: var(--accent-color);
+    }
+
+    /* Mobile Navigation Active */
+    @media (max-width: 991px) {
+      .mobile-nav-toggle {
+        display: block;
+      }
+
+      .navbar ul {
+        display: none;
+      }
+
+      .navbar-mobile {
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: rgba(28, 47, 65, 0.98);
+        backdrop-filter: blur(20px);
+        transition: 0.3s;
+        z-index: 999;
+      }
+
+      .navbar-mobile .mobile-nav-toggle {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 32px;
+        z-index: 1000;
+      }
+
+      .navbar-mobile ul {
+        display: block;
+        position: absolute;
+        top: 55px;
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 0;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        overflow-y: auto;
+        transition: 0.3s;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .navbar-mobile a,
+      .navbar-mobile a:focus {
+        padding: 15px 25px;
+        font-size: 16px;
+        border-radius: 15px;
+        margin: 5px 15px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-mobile a:hover,
+      .navbar-mobile .active,
+      .navbar-mobile li:hover > a {
+        background: linear-gradient(45deg, var(--accent-color), #e67e22);
+        border-color: transparent;
+        transform: translateX(10px);
+      }
+
+      .navbar-mobile .getstarted,
+      .navbar-mobile .getstarted:focus {
+        margin: 15px;
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        border: 2px solid var(--accent-color);
+        box-shadow: 0 8px 30px rgba(231, 76, 60, 0.3);
+      }
+
+      .navbar-mobile .getstarted:hover {
+        background: linear-gradient(45deg, var(--accent-color), #e67e22);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 40px rgba(243, 156, 18, 0.4);
+      }
+    }
+
+    /* Navbar Animation on Scroll */
+    .navbar-mobile.show {
+      animation: slideInFromTop 0.3s ease-out;
+    }
+
+    @keyframes slideInFromTop {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Mobile Menu Items Animation */
+    .navbar-mobile ul li {
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideInLeft 0.5s ease forwards;
+    }
+
+    .navbar-mobile ul li:nth-child(1) { animation-delay: 0.1s; }
+    .navbar-mobile ul li:nth-child(2) { animation-delay: 0.2s; }
+    .navbar-mobile ul li:nth-child(3) { animation-delay: 0.3s; }
+    .navbar-mobile ul li:nth-child(4) { animation-delay: 0.4s; }
+    .navbar-mobile ul li:nth-child(5) { animation-delay: 0.5s; }
+    .navbar-mobile ul li:nth-child(6) { animation-delay: 0.6s; }
+
+    @keyframes slideInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Hero Section */
+    #hero {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,0 1000,300 1000,1000 0,700"/></svg>');
+      pointer-events: none;
+    }
+
+    #hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    #hero h2 {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .hero-icon-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      margin: 0 auto;
+      transition: all 0.5s ease;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-icon-container:hover {
+      transform: scale(1.05) rotate(5deg);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-icon-container i {
+      font-size: 120px;
+      color: var(--accent-color);
+      text-shadow: 0 5px 20px rgba(243, 156, 18, 0.3);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .btn-get-started {
+      background: var(--accent-color);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+    }
+
+    .btn-get-started:hover {
+      background: #e67e22;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6);
+      color: white;
+    }
+
+    /* Services Section */
+    .services {
+      background: var(--light-bg);
+      padding: 80px 0;
+    }
+
+    .section-title h2 {
+      color: var(--secondary-color);
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .icon-box {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      height: 100%;
+      text-align: center;
+    }
+
+    .icon-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .icon-box .icon {
+      margin-bottom: 20px;
+    }
+
+    .icon-box i {
+      font-size: 48px;
+      color: var(--primary-color);
+    }
+
+    .icon-box h4 {
+      color: var(--secondary-color);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: var(--secondary-color);
+      color: white;
+      padding: 80px 0;
+    }
+
+    .testimonial-item {
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+
+    .testimonial-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--accent-color), #e67e22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto;
+      box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 35px rgba(243, 156, 18, 0.4);
+    }
+
+    .testimonial-icon i {
+      font-size: 36px;
+      color: white;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: var(--light-bg);
+      padding: 80px 0;
+    }
+
+    .info-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .info-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .info-box i {
+      font-size: 48px;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
+    #footer {
+      background: var(--dark-bg);
+      color: white;
+      padding: 40px 0;
+    }
+
+    .social-links .social-icon {
+      background: var(--primary-color);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 5px;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .social-links .social-icon:hover {
+      background: var(--accent-color);
+      transform: translateY(-3px);
+    }
+
+    /* Recent Posts */
+    .recent-posts {
+      padding: 80px 0;
+    }
+
+    .post-icon-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+      border-radius: 15px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(231, 76, 60, 0.2);
+    }
+
+    .post-icon-container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(231, 76, 60, 0.3);
+    }
+
+    .post-icon-container i {
+      font-size: 60px;
+      color: white;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .author-icon-container {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      flex-shrink: 0;
+      box-shadow: 0 5px 15px rgba(44, 62, 80, 0.2);
+    }
+
+    .author-icon-container i {
+      font-size: 24px;
+      color: white;
+    }
+
+    .post-meta {
+      margin: 0;
+    }
+
+    .post-author {
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin-bottom: 5px;
+    }
+
+    .post-date {
+      color: #666;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      visibility: hidden;
+      opacity: 0;
+      right: 30px;
+      bottom: 30px;
+      z-index: 996;
+      background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transition: all 0.4s;
+      box-shadow: 0 4px 20px rgba(231, 76, 60, 0.3);
+      cursor: pointer;
+    }
+
+    .back-to-top i {
+      font-size: 24px;
+      color: white;
+      line-height: 0;
+    }
+
+    .back-to-top:hover {
+      background: linear-gradient(45deg, var(--accent-color), #e67e22);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(243, 156, 18, 0.5);
+    }
+
+    .back-to-top.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Loading Animation */
+    body:not(.loaded) {
+      overflow: hidden;
+    }
+
+    body:not(.loaded) #header {
+      transform: translateY(-100%);
+    }
+
+    body.loaded #header {
+      animation: slideDown 0.6s ease-out;
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    /* Additional Responsive Styles */
+    @media (max-width: 768px) {
+      .navbar-mobile ul {
+        max-height: calc(100vh - 120px);
+      }
+      
+      .logo-text {
+        font-size: 28px;
+      }
+      
+      .header-container {
+        padding: 10px 0;
+      }
+      
+      .hero-icon-container {
+        width: 250px;
+        height: 250px;
+      }
+      
+      .hero-icon-container i {
+        font-size: 80px;
+      }
+      
+      .about-icon-container {
+        height: 300px;
+      }
+      
+      .about-icon-container i {
+        font-size: 80px;
+      }
+      
+      #hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      #hero h2 {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .back-to-top {
+        right: 20px;
+        bottom: 20px;
+        width: 45px;
+        height: 45px;
+      }
+      
+      .back-to-top i {
+        font-size: 20px;
+      }
+      
+      .logo-text {
+        font-size: 24px;
+      }
+      
+      .hero-icon-container {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .hero-icon-container i {
+        font-size: 60px;
+      }
+      
+      .about-icon-container {
+        height: 250px;
+      }
+      
+      .about-icon-container i {
+        font-size: 60px;
+      }
+      
+      .post-icon-container {
+        height: 150px;
+      }
+      
+      .post-icon-container i {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between header-container">
+      
+      <a href="index.html" class="logo" style="display: block;">
+        <span class="logo-text">CPM</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero"><i class="bi bi-house-door"></i> Home</a></li>
+          <li><a class="nav-link scrollto" href="#about"><i class="bi bi-info-circle"></i> About</a></li>
+          <li><a class="nav-link scrollto" href="#services"><i class="bi bi-gear"></i> Services</a></li>
+          <li><a class="nav-link scrollto" href="#testimonials"><i class="bi bi-chat-quote"></i> Testimonials</a></li>
+          <li><a class="nav-link scrollto" href="#recent-posts"><i class="bi bi-journal-text"></i> Blog</a></li>
+          <li><a class="nav-link scrollto" href="#contact"><i class="bi bi-envelope"></i> Contact</a></li>
+          <li><a class="getstarted scrollto" href="#contact"><i class="bi bi-rocket-takeoff"></i> Light Up Your Brand</a></li>
+        </ul>
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+        </button>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container-fluid" data-aos="fade-up">
+      <div class="row justify-content-center">
+        <div class="col-xl-5 col-lg-6 pt-3 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1>Content Phase Media Uganda Limited</h1>
+          <h2>Where Ideas Shine Bright!</h2>
+          <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.95;">Lighting Up Uganda, One Billboard at a Time</p>
+          <div><a href="#about" class="btn-get-started scrollto">Light Up Your Brand</a></div>
+        </div>
+        <div class="col-xl-4 col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="150">
+          <div class="hero-icon-container">
+            <i class="bx bx-bullhorn"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
+            <div class="about-icon-container">
+              <i class="bx bx-trending-up"></i>
+            </div>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+            <h3>About Content Phase Media Uganda Limited</h3>
+            <p class="fst-italic">
+              In the heart of Kampala, a new force in outdoor advertising is emerging. As a dynamic startup specializing in digital billboards and static billboards, we are on a mission to transform the way brands communicate with the masses while enhancing the urban landscape in a sustainable and visually captivating manner.
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i>We believe in the power of big ideas, bold visuals, and brilliant execution to help businesses express their messages impactfully.</li>
+              <li><i class="bi bi-check-circle"></i>We bridge the gap between Ugandan businesses and the world, helping local indigenous companies and international brands expand their reach.</li>
+              <li><i class="bi bi-check-circle"></i>Our digital displays don't just advertise—they light up and transform urban spaces into modern, lively environments.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>
+            From bustling Kampala streets to key highways across Uganda, we position brands where they matter most with innovative and sustainable advertising solutions.
+          </p>
+        </div>
+
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon">
+                <i class="bx bx-tv"></i>
+              </div>
+              <h4>Digital Billboards</h4>
+              <p>
+                Eye-catching, dynamic, and energy-efficient LED displays that deliver vibrant advertisements day and night, transforming urban spaces into modern, lively environments.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon">
+                <i class="bx bx-billboard"></i>
+              </div>
+              <h4>Static Billboards</h4>
+              <p>
+                Strategically placed, high-quality printed billboards for lasting brand impressions across Uganda's most premium locations with maximum visibility.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon">
+                <i class="bx bx-leaf"></i>
+              </div>
+              <h4>Sustainable Solutions</h4>
+              <p>
+                We prioritize eco-friendly practices, ensuring our operations align with environmental consciousness while delivering impactful advertising results.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon">
+                <i class="bx bx-map"></i>
+              </div>
+              <h4>Nationwide Reach</h4>
+              <p>
+                From bustling Kampala streets to key highways across Uganda, we position your brand in strategic locations for maximum audience engagement.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon">
+                <i class="bx bx-bulb"></i>
+              </div>
+              <h4>Innovation & Creativity</h4>
+              <p>
+                We don't just display ads—we tell stories that resonate, combining bold visuals with brilliant execution for maximum impact.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon">
+                <i class="bx bx-world"></i>
+              </div>
+              <h4>Local & Global Impact</h4>
+              <p>
+                Supporting both local SMEs looking to grow and international brands entering the Ugandan market with strategic outdoor advertising solutions.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Client Success Stories</h2>
+          <p>
+            See how Content Phase Media Uganda Limited has helped brands across Uganda achieve remarkable visibility and drive meaningful engagement through strategic outdoor advertising.
+          </p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Content Phase Media Uganda transformed our brand visibility in Kampala completely. Their strategic digital billboard placements increased our customer inquiries by 60% in just two months. The team understood our local market perfectly and delivered outstanding results.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <div class="testimonial-icon">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <h3>Grace Nakamura</h3>
+                <h4>Marketing Manager, Kampala Retail Solutions</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  The digital billboard campaign along Entebbe Road exceeded all our expectations. The vibrant displays and strategic timing gave us unprecedented reach across Uganda's business community. Professional, innovative, and results-driven!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <div class="testimonial-icon">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <h3>Robert Ssemakula</h3>
+                <h4>CEO, Pearl Tech Uganda</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Working with Content Phase Media feels like partnering with true advertising visionaries. Their understanding of Uganda's market dynamics and creative approach helped us launch successfully in East Africa. Brilliant execution from start to finish!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <div class="testimonial-icon">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <h3>Sarah Kiprotich</h3>
+                <h4>Regional Director, East Africa Ventures</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  The static billboard campaign across major Ugandan highways was a game-changer for our business. The reach and impact were phenomenal, and we saw immediate results in brand recognition nationwide. Exceptional service and local expertise!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <div class="testimonial-icon">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <h3>James Mukwaya</h3>
+                <h4>Founder, Uganda Growth Enterprises</h4>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Recent-posts Section -->
+    <section id="recent-posts" class="recent-posts">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Industry Insights</h2>
+        <p>
+          Stay ahead of Uganda's outdoor advertising trends with our expert insights, case studies, and market analysis that drive successful campaigns across East Africa.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <article>
+              <div class="post-img">
+                <div class="post-icon-container">
+                  <i class="bx bx-broadcast"></i>
+                </div>
+              </div>
+              <h3 class="title">
+                <a href="#">Digital Billboard Revolution: Transforming Kampala's Urban Landscape</a>
+              </h3>
+              <div class="d-flex align-items-center">
+                <div class="author-icon-container">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <div class="post-meta">
+                  <p class="post-author">Marketing Team</p>
+                  <p class="post-date">
+                    <time datetime="2025-06-10">Jun 10, 2025</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <article>
+              <div class="post-img">
+                <div class="post-icon-container">
+                  <i class="bx bx-map-pin"></i>
+                </div>
+              </div>
+              <h3 class="title">
+                <a href="#">Strategic Billboard Placement: Maximizing Reach Across Uganda's Major Highways</a>
+              </h3>
+              <div class="d-flex align-items-center">
+                <div class="author-icon-container">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <div class="post-meta">
+                  <p class="post-author">Strategy Team</p>
+                  <p class="post-date">
+                    <time datetime="2025-06-05">Jun 5, 2025</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <article>
+              <div class="post-img">
+                <div class="post-icon-container">
+                  <i class="bx bx-leaf"></i>
+                </div>
+              </div>
+              <h3 class="title">
+                <a href="#">Sustainable Advertising in Uganda: Eco-Friendly Billboard Solutions for Modern Brands</a>
+              </h3>
+              <div class="d-flex align-items-center">
+                <div class="author-icon-container">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <div class="post-meta">
+                  <p class="post-author">Sustainability Team</p>
+                  <p class="post-date">
+                    <time datetime="2025-05-28">May 28, 2025</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Let's Light Up Your Brand</h2>
+          <p>
+            Ready to make your brand unmissable across Uganda? Contact Content Phase Media Uganda Limited for innovative outdoor advertising solutions that deliver exceptional results.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="info-box mb-4">
+              <i class="bx bx-map"></i>
+              <h3>Our Address</h3>
+              <p>MUG ONE HOUSE, PLOT 32 KANJOKYA STREET<br>KAMPALA, UGANDA</p>
+              <small style="opacity: 0.7;">TIN Number: 1046353954</small>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box mb-4">
+              <i class="bx bx-envelope"></i>
+              <h3>Email Us</h3>
+              <p>enquiries@content-phasemedia.com</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-box mb-4">
+              <i class="bx bx-phone-call"></i>
+              <h3>Call Us</h3>
+              <p>+256 (0) XXX XXX XXX</p>
+              <small style="opacity: 0.7;">Contact us for direct number</small>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-12 text-center">
+            <div class="info-box">
+              <i class="bx bx-time-five"></i>
+              <h3>Join Us in Shaping Uganda's Advertising Future</h3>
+              <p>Whether you're a <strong>local SME looking to grow</strong> or an <strong>international brand entering the Ugandan market</strong>, Content Phase Media Uganda Limited is your trusted partner in outdoor advertising.</p>
+              <p><em>Together, let's light up Uganda, inspire audiences, and take businesses to new heights!</em></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright-wrap d-md-flex py-4">
+        <div class="me-md-auto text-center text-md-start">
+          <div class="copyright">
+            &copy; Copyright <strong><span>Content Phase Media Uganda Limited</span></strong>. All Rights Reserved
+          </div>
+        </div>
+        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+          <span class="social-icon"><i class="bx bxl-twitter"></i></span>
+          <span class="social-icon"><i class="bx bxl-facebook"></i></span>
+          <span class="social-icon"><i class="bx bxl-instagram"></i></span>
+          <span class="social-icon"><i class="bx bxl-linkedin"></i></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></div>
+
+  <!-- Vendor JS Files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+
+    // Initialize Swiper
+    var swiper = new Swiper('.testimonials-slider', {
+      speed: 600,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      slidesPerView: 'auto',
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      }
+    });
+
+    // Enhanced Navbar functionality
+    const navbar = document.querySelector('#navbar');
+    const navbarToggle = document.querySelector('.mobile-nav-toggle');
+    const header = document.querySelector('#header');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Mobile menu toggle with animation
+    navbarToggle.addEventListener('click', function() {
+      navbar.classList.toggle('navbar-mobile');
+      
+      // Animate hamburger icon
+      const icon = this.querySelector('i');
+      if (navbar.classList.contains('navbar-mobile')) {
+        icon.classList.remove('bi-list');
+        icon.classList.add('bi-x');
+        navbar.classList.add('show');
+      } else {
+        icon.classList.remove('bi-x');
+        icon.classList.add('bi-list');
+        navbar.classList.remove('show');
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navbar.classList.contains('navbar-mobile')) {
+          navbar.classList.remove('navbar-mobile', 'show');
+          const icon = navbarToggle.querySelector('i');
+          icon.classList.remove('bi-x');
+          icon.classList.add('bi-list');
+        }
+      });
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    });
+
+    // Active nav link highlighting
+    function highlightActiveSection() {
+      const scrollPos = window.scrollY + 200;
+      
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          
+          if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            // Remove active class from all links
+            navLinks.forEach(l => l.classList.remove('active'));
+            // Add active class to current link
+            link.classList.add('active');
+          }
+        }
+      });
+    }
+
+    // Listen for scroll events to update active nav
+    window.addEventListener('scroll', highlightActiveSection);
+
+    // Smooth scrolling for navigation links only
+    document.querySelectorAll('.nav-link, .btn-get-started').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            const headerHeight = header.offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+
+    // Back to top button
+    const backToTopButton = document.querySelector('.back-to-top');
+    
+    // Add click functionality to back-to-top button
+    backToTopButton.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'flex';
+        backToTopButton.style.opacity = '1';
+      } else {
+        backToTopButton.style.opacity = '0';
+        setTimeout(() => {
+          if (window.scrollY <= 300) {
+            backToTopButton.style.display = 'none';
+          }
+        }, 300);
+      }
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!navbar.contains(e.target) && !navbarToggle.contains(e.target)) {
+        if (navbar.classList.contains('navbar-mobile')) {
+          navbar.classList.remove('navbar-mobile', 'show');
+          const icon = navbarToggle.querySelector('i');
+          icon.classList.remove('bi-x');
+          icon.classList.add('bi-list');
+        }
+      }
+    });
+
+    // Prevent body scroll when mobile menu is open
+    const body = document.querySelector('body');
+    new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.target.classList.contains('navbar-mobile')) {
+          body.style.overflow = 'hidden';
+        } else {
+          body.style.overflow = 'auto';
+        }
+      });
+    }).observe(navbar, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+
+    // Add loading animation
+    window.addEventListener('load', function() {
+      document.body.classList.add('loaded');
+    });
+  </script>
+
+</body>
+</html>
