@@ -290,20 +290,35 @@
       transition: 0.5s;
       border: none;
       background: none;
-      padding: 0;
+      padding: 10px;
+      z-index: 1001;
+      position: relative;
+      -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+      user-select: none;
     }
 
     .mobile-nav-toggle:hover {
-      color: var(--accent-color);
+      color: #fee140;
+      text-shadow: 0 0 20px rgba(254, 225, 64, 0.8);
+    }
+
+    .mobile-nav-toggle:focus {
+      outline: none;
+      color: #fee140;
+    }
+
+    .mobile-nav-toggle:active {
+      transform: scale(0.95);
     }
 
     /* Mobile Navigation Active */
     @media (max-width: 991px) {
       .mobile-nav-toggle {
-        display: block;
+        display: block !important;
         color: white;
         font-size: 32px;
         z-index: 1001;
+        position: relative;
       }
 
       .mobile-nav-toggle:hover {
@@ -312,11 +327,11 @@
       }
 
       .navbar ul {
-        display: none;
+        display: none !important;
       }
 
       .navbar-mobile {
-        position: fixed;
+        position: fixed !important;
         overflow: hidden;
         top: 0;
         right: 0;
@@ -326,6 +341,7 @@
         backdrop-filter: blur(30px);
         transition: 0.3s;
         z-index: 999;
+        display: block !important;
       }
 
       .navbar-mobile .mobile-nav-toggle {
@@ -333,13 +349,20 @@
         top: 15px;
         right: 15px;
         font-size: 36px;
-        z-index: 1000;
+        z-index: 1002;
         color: white;
         text-shadow: 0 0 20px rgba(255,255,255,0.5);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       .navbar-mobile ul {
-        display: block;
+        display: block !important;
         position: absolute;
         top: 80px;
         right: 15px;
@@ -358,20 +381,22 @@
 
       .navbar-mobile a,
       .navbar-mobile a:focus {
-        padding: 20px 30px;
-        font-size: 18px;
+        padding: 20px 30px !important;
+        font-size: 18px !important;
         border-radius: 20px;
         margin: 8px 20px;
         background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
         border: 2px solid rgba(255, 255, 255, 0.2);
-        color: white;
+        color: white !important;
         text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        display: block;
+        text-decoration: none;
       }
 
       .navbar-mobile a:hover,
       .navbar-mobile .active,
       .navbar-mobile li:hover > a {
-        background: linear-gradient(45deg, #fa709a, #fee140, #4facfe);
+        background: linear-gradient(45deg, #fa709a, #fee140, #4facfe) !important;
         border-color: rgba(255, 255, 255, 0.5);
         transform: translateX(10px) scale(1.02);
         box-shadow: 0 10px 30px rgba(250, 112, 154, 0.4);
@@ -379,17 +404,22 @@
 
       .navbar-mobile .getstarted,
       .navbar-mobile .getstarted:focus {
-        margin: 20px;
-        background: linear-gradient(45deg, #43e97b, #38f9d7, #4facfe);
-        border: 3px solid rgba(255, 255, 255, 0.4);
+        margin: 20px !important;
+        background: linear-gradient(45deg, #43e97b, #38f9d7, #4facfe) !important;
+        border: 3px solid rgba(255, 255, 255, 0.4) !important;
         box-shadow: 0 15px 40px rgba(67, 233, 123, 0.4);
-        padding: 20px 30px;
+        padding: 20px 30px !important;
       }
 
       .navbar-mobile .getstarted:hover {
-        background: linear-gradient(45deg, #fa709a, #fee140, #4facfe);
+        background: linear-gradient(45deg, #fa709a, #fee140, #4facfe) !important;
         transform: translateY(-3px) scale(1.05);
         box-shadow: 0 20px 50px rgba(250, 112, 154, 0.6);
+      }
+
+      /* Ensure mobile menu is hidden by default */
+      .navbar:not(.navbar-mobile) ul {
+        display: none !important;
       }
     }
 
@@ -1361,7 +1391,175 @@
       </div>
     </section>
 
-  
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Client Success Stories</h2>
+          <p>
+            See how Content Phase Media Uganda Limited has helped brands across Uganda achieve remarkable visibility and drive meaningful engagement through strategic outdoor advertising.
+          </p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Content Phase Media Uganda transformed our brand visibility in Kampala completely. Their strategic digital billboard placements increased our customer inquiries by 60% in just two months. The team understood our local market perfectly and delivered outstanding results.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <div class="testimonial-icon">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <h3>Grace Nakamura</h3>
+                <h4>Marketing Manager, Kampala Retail Solutions</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  The digital billboard campaign along Entebbe Road exceeded all our expectations. The vibrant displays and strategic timing gave us unprecedented reach across Uganda's business community. Professional, innovative, and results-driven!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <div class="testimonial-icon">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <h3>Robert Ssemakula</h3>
+                <h4>CEO, Pearl Tech Uganda</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Working with Content Phase Media feels like partnering with true advertising visionaries. Their understanding of Uganda's market dynamics and creative approach helped us launch successfully in East Africa. Brilliant execution from start to finish!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <div class="testimonial-icon">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <h3>Sarah Kiprotich</h3>
+                <h4>Regional Director, East Africa Ventures</h4>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  The static billboard campaign across major Ugandan highways was a game-changer for our business. The reach and impact were phenomenal, and we saw immediate results in brand recognition nationwide. Exceptional service and local expertise!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <div class="testimonial-icon">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <h3>James Mukwaya</h3>
+                <h4>Founder, Uganda Growth Enterprises</h4>
+              </div>
+            </div>
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Recent-posts Section -->
+    <section id="recent-posts" class="recent-posts">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Industry Insights</h2>
+        <p>
+          Stay ahead of Uganda's outdoor advertising trends with our expert insights, case studies, and market analysis that drive successful campaigns across East Africa.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <article>
+              <div class="post-img">
+                <div class="post-icon-container">
+                  <i class="bx bx-broadcast"></i>
+                </div>
+              </div>
+              <h3 class="title">
+                <a href="#">Digital Billboard Revolution: Transforming Kampala's Urban Landscape</a>
+              </h3>
+              <div class="d-flex align-items-center">
+                <div class="author-icon-container">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <div class="post-meta">
+                  <p class="post-author">Marketing Team</p>
+                  <p class="post-date">
+                    <time datetime="2025-06-10">Jun 10, 2025</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <article>
+              <div class="post-img">
+                <div class="post-icon-container">
+                  <i class="bx bx-map-pin"></i>
+                </div>
+              </div>
+              <h3 class="title">
+                <a href="#">Strategic Billboard Placement: Maximizing Reach Across Uganda's Major Highways</a>
+              </h3>
+              <div class="d-flex align-items-center">
+                <div class="author-icon-container">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <div class="post-meta">
+                  <p class="post-author">Strategy Team</p>
+                  <p class="post-date">
+                    <time datetime="2025-06-05">Jun 5, 2025</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <article>
+              <div class="post-img">
+                <div class="post-icon-container">
+                  <i class="bx bx-leaf"></i>
+                </div>
+              </div>
+              <h3 class="title">
+                <a href="#">Sustainable Advertising in Uganda: Eco-Friendly Billboard Solutions for Modern Brands</a>
+              </h3>
+              <div class="d-flex align-items-center">
+                <div class="author-icon-container">
+                  <i class="bi bi-person-circle"></i>
+                </div>
+                <div class="post-meta">
+                  <p class="post-author">Sustainability Team</p>
+                  <p class="post-date">
+                    <time datetime="2025-05-28">May 28, 2025</time>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact section-bg">
       <div class="container" data-aos="fade-up">
@@ -1458,22 +1656,39 @@
     const header = document.querySelector('#header');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Mobile menu toggle with animation
-    navbarToggle.addEventListener('click', function() {
-      navbar.classList.toggle('navbar-mobile');
-      
-      // Animate hamburger icon
-      const icon = this.querySelector('i');
-      if (navbar.classList.contains('navbar-mobile')) {
-        icon.classList.remove('bi-list');
-        icon.classList.add('bi-x');
-        navbar.classList.add('show');
-      } else {
-        icon.classList.remove('bi-x');
-        icon.classList.add('bi-list');
-        navbar.classList.remove('show');
-      }
-    });
+    // Mobile menu toggle with animation - Fixed for mobile devices
+    if (navbarToggle) {
+      navbarToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        console.log('Mobile menu toggle clicked'); // Debug log
+        
+        navbar.classList.toggle('navbar-mobile');
+        
+        // Animate hamburger icon
+        const icon = this.querySelector('i');
+        if (navbar.classList.contains('navbar-mobile')) {
+          icon.classList.remove('bi-list');
+          icon.classList.add('bi-x');
+          navbar.classList.add('show');
+          document.body.style.overflow = 'hidden'; // Prevent body scroll
+          console.log('Mobile menu opened');
+        } else {
+          icon.classList.remove('bi-x');
+          icon.classList.add('bi-list');
+          navbar.classList.remove('show');
+          document.body.style.overflow = 'auto'; // Restore body scroll
+          console.log('Mobile menu closed');
+        }
+      });
+
+      // Touch event for better mobile support
+      navbarToggle.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        this.click();
+      });
+    }
 
     // Close mobile menu when clicking on a link
     navLinks.forEach(link => {
@@ -1483,6 +1698,7 @@
           const icon = navbarToggle.querySelector('i');
           icon.classList.remove('bi-x');
           icon.classList.add('bi-list');
+          document.body.style.overflow = 'auto';
         }
       });
     });
@@ -1566,34 +1782,59 @@
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
-      if (!navbar.contains(e.target) && !navbarToggle.contains(e.target)) {
+      if (navbar && navbarToggle && !navbar.contains(e.target) && !navbarToggle.contains(e.target)) {
         if (navbar.classList.contains('navbar-mobile')) {
           navbar.classList.remove('navbar-mobile', 'show');
           const icon = navbarToggle.querySelector('i');
-          icon.classList.remove('bi-x');
-          icon.classList.add('bi-list');
+          if (icon) {
+            icon.classList.remove('bi-x');
+            icon.classList.add('bi-list');
+          }
+          document.body.style.overflow = 'auto';
         }
       }
     });
 
-    // Prevent body scroll when mobile menu is open
+    // Simplified body scroll management
     const body = document.querySelector('body');
-    new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        if (mutation.target.classList.contains('navbar-mobile')) {
-          body.style.overflow = 'hidden';
-        } else {
-          body.style.overflow = 'auto';
-        }
+    if (navbar) {
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.target.classList.contains('navbar-mobile')) {
+            body.style.overflow = 'hidden';
+          } else {
+            body.style.overflow = 'auto';
+          }
+        });
       });
-    }).observe(navbar, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
+      
+      observer.observe(navbar, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+    }
 
     // Add loading animation
     window.addEventListener('load', function() {
       document.body.classList.add('loaded');
+      
+      // Double-check mobile menu functionality after page load
+      const toggleBtn = document.querySelector('.mobile-nav-toggle');
+      const navElement = document.querySelector('#navbar');
+      
+      if (toggleBtn && navElement) {
+        console.log('Mobile navigation elements found and ready');
+        
+        // Fallback event listener for older browsers
+        toggleBtn.addEventListener('touchend', function(e) {
+          e.preventDefault();
+          if (!e.defaultPrevented) {
+            this.click();
+          }
+        }, { passive: false });
+      } else {
+        console.error('Mobile navigation elements not found');
+      }
     });
   </script>
 
