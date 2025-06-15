@@ -59,8 +59,11 @@
       padding: 0;
       box-shadow: 0 8px 40px rgba(102, 126, 234, 0.4);
       transition: all 0.3s ease;
-      z-index: 997;
-      position: relative;
+      z-index: 1000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       overflow: hidden;
     }
 
@@ -319,6 +322,141 @@
       }
     }
 
+    /* Mobile Menu Overlay - Completely separate from header */
+    .mobile-menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.98), rgba(240, 147, 251, 0.98));
+      backdrop-filter: blur(30px);
+      z-index: 999999;
+      display: none;
+      overflow-y: auto;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-overlay.show {
+      display: block;
+      animation: slideInFromTop 0.3s ease-out;
+    }
+
+    .mobile-menu-close {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      font-size: 36px;
+      z-index: 999999;
+      color: white;
+      text-shadow: 0 0 20px rgba(255,255,255,0.5);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: scale(1.1);
+    }
+
+    .mobile-menu-content {
+      position: absolute;
+      top: 80px;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+      padding: 20px 0;
+      border-radius: 30px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+      overflow-y: auto;
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .mobile-menu-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .mobile-menu-nav li {
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideInLeft 0.5s ease forwards;
+    }
+
+    .mobile-menu-nav li:nth-child(1) { animation-delay: 0.1s; }
+    .mobile-menu-nav li:nth-child(2) { animation-delay: 0.2s; }
+    .mobile-menu-nav li:nth-child(3) { animation-delay: 0.3s; }
+    .mobile-menu-nav li:nth-child(4) { animation-delay: 0.4s; }
+    .mobile-menu-nav li:nth-child(5) { animation-delay: 0.5s; }
+
+    .mobile-menu-nav a {
+      padding: 20px 30px;
+      font-size: 18px;
+      border-radius: 20px;
+      margin: 8px 20px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      display: block;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+    }
+
+    .mobile-menu-nav a:hover,
+    .mobile-menu-nav a.active {
+      background: linear-gradient(45deg, #fa709a, #fee140, #4facfe);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateX(10px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(250, 112, 154, 0.4);
+    }
+
+    .mobile-menu-nav .getstarted {
+      margin: 20px;
+      background: linear-gradient(45deg, #43e97b, #38f9d7, #4facfe);
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 15px 40px rgba(67, 233, 123, 0.4);
+    }
+
+    .mobile-menu-nav .getstarted:hover {
+      background: linear-gradient(45deg, #fa709a, #fee140, #4facfe);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 20px 50px rgba(250, 112, 154, 0.6);
+    }
+
+    @keyframes slideInFromTop {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
     /* Mobile Navigation Styles */
     @media (max-width: 991px) {
       .mobile-nav-toggle {
@@ -326,136 +464,8 @@
       }
 
       /* Hide desktop nav by default on mobile */
-      .navbar:not(.navbar-mobile) ul {
+      .navbar ul {
         display: none;
-      }
-
-      /* Mobile Navigation Overlay */
-      .navbar-mobile {
-        position: fixed !important;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, rgba(102, 126, 234, 0.98), rgba(240, 147, 251, 0.98));
-        backdrop-filter: blur(30px);
-        transition: all 0.3s ease;
-        z-index: 999;
-        overflow-y: auto;
-      }
-
-      /* Mobile toggle in overlay */
-      .navbar-mobile .mobile-nav-toggle {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        font-size: 36px;
-        z-index: 1002;
-        color: white;
-        text-shadow: 0 0 20px rgba(255,255,255,0.5);
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      /* Mobile navigation menu */
-      .navbar-mobile ul {
-        display: flex !important;
-        position: absolute;
-        top: 80px;
-        right: 15px;
-        bottom: 15px;
-        left: 15px;
-        padding: 20px 0;
-        border-radius: 30px;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-        overflow-y: auto;
-        transition: 0.3s;
-        flex-direction: column;
-        gap: 10px;
-        backdrop-filter: blur(20px);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-      }
-
-      /* Mobile navigation links */
-      .navbar-mobile a,
-      .navbar-mobile a:focus {
-        padding: 20px 30px !important;
-        font-size: 18px !important;
-        border-radius: 20px;
-        margin: 8px 20px;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        color: white !important;
-        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        display: block;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-
-      .navbar-mobile a:hover,
-      .navbar-mobile .active,
-      .navbar-mobile li:hover > a {
-        background: linear-gradient(45deg, #fa709a, #fee140, #4facfe) !important;
-        border-color: rgba(255, 255, 255, 0.5);
-        transform: translateX(10px) scale(1.02);
-        box-shadow: 0 10px 30px rgba(250, 112, 154, 0.4);
-      }
-
-      .navbar-mobile .getstarted,
-      .navbar-mobile .getstarted:focus {
-        margin: 20px !important;
-        background: linear-gradient(45deg, #43e97b, #38f9d7, #4facfe) !important;
-        border: 3px solid rgba(255, 255, 255, 0.4) !important;
-        box-shadow: 0 15px 40px rgba(67, 233, 123, 0.4);
-        padding: 20px 30px !important;
-      }
-
-      .navbar-mobile .getstarted:hover {
-        background: linear-gradient(45deg, #fa709a, #fee140, #4facfe) !important;
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 20px 50px rgba(250, 112, 154, 0.6);
-      }
-
-      /* Animation classes */
-      .navbar-mobile.show {
-        animation: slideInFromTop 0.3s ease-out;
-      }
-
-      @keyframes slideInFromTop {
-        0% {
-          transform: translateY(-100%);
-          opacity: 0;
-        }
-        100% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
-      /* Mobile Menu Items Animation */
-      .navbar-mobile ul li {
-        opacity: 0;
-        transform: translateX(-50px);
-        animation: slideInLeft 0.5s ease forwards;
-      }
-
-      .navbar-mobile ul li:nth-child(1) { animation-delay: 0.1s; }
-      .navbar-mobile ul li:nth-child(2) { animation-delay: 0.2s; }
-      .navbar-mobile ul li:nth-child(3) { animation-delay: 0.3s; }
-      .navbar-mobile ul li:nth-child(4) { animation-delay: 0.4s; }
-      .navbar-mobile ul li:nth-child(5) { animation-delay: 0.5s; }
-      .navbar-mobile ul li:nth-child(6) { animation-delay: 0.6s; }
-
-      @keyframes slideInLeft {
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
       }
     }
 
@@ -1384,63 +1394,101 @@
       mirror: false
     });
 
-    // Simplified Mobile Navigation
+    // Mobile Navigation - Completely separate overlay approach
     document.addEventListener('DOMContentLoaded', function() {
-      const navbar = document.querySelector('#navbar');
       const navbarToggle = document.querySelector('.mobile-nav-toggle');
       const header = document.querySelector('#header');
       const navLinks = document.querySelectorAll('.nav-link');
+      
+      // Create mobile menu overlay
+      function createMobileMenu() {
+        const overlay = document.createElement('div');
+        overlay.className = 'mobile-menu-overlay';
+        overlay.innerHTML = `
+          <button class="mobile-menu-close" aria-label="Close menu">
+            <i class="bi bi-x"></i>
+          </button>
+          <div class="mobile-menu-content">
+            <ul class="mobile-menu-nav">
+              <li><a href="#hero"><i class="bi bi-house-door"></i> Home</a></li>
+              <li><a href="#about"><i class="bi bi-info-circle"></i> About</a></li>
+              <li><a href="#services"><i class="bi bi-gear"></i> Services</a></li>
+              <li><a href="#contact"><i class="bi bi-envelope"></i> Contact</a></li>
+              <li><a href="#contact" class="getstarted"><i class="bi bi-rocket-takeoff"></i> Light Up Your Brand</a></li>
+            </ul>
+          </div>
+        `;
+        
+        document.body.appendChild(overlay);
+        return overlay;
+      }
+
+      // Get or create mobile menu
+      let mobileMenu = document.querySelector('.mobile-menu-overlay');
+      if (!mobileMenu) {
+        mobileMenu = createMobileMenu();
+      }
+
+      const closeButton = mobileMenu.querySelector('.mobile-menu-close');
+      const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-menu-nav a');
 
       // Mobile menu toggle
-      if (navbarToggle && navbar) {
+      if (navbarToggle) {
         navbarToggle.addEventListener('click', function(e) {
           e.preventDefault();
           e.stopPropagation();
           
           const icon = this.querySelector('i');
-          const isOpen = navbar.classList.contains('navbar-mobile');
+          const isOpen = mobileMenu.classList.contains('show');
           
           if (isOpen) {
             // Close menu
-            navbar.classList.remove('navbar-mobile', 'show');
+            mobileMenu.classList.remove('show');
             icon.classList.remove('bi-x');
             icon.classList.add('bi-list');
             document.body.style.overflow = 'auto';
           } else {
             // Open menu
-            navbar.classList.add('navbar-mobile', 'show');
+            mobileMenu.classList.add('show');
             icon.classList.remove('bi-list');
             icon.classList.add('bi-x');
             document.body.style.overflow = 'hidden';
           }
         });
+      }
 
-        // Close mobile menu when clicking on a link
-        navLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            if (navbar.classList.contains('navbar-mobile')) {
-              navbar.classList.remove('navbar-mobile', 'show');
-              const icon = navbarToggle.querySelector('i');
-              icon.classList.remove('bi-x');
-              icon.classList.add('bi-list');
-              document.body.style.overflow = 'auto';
-            }
-          });
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-          if (!navbar.contains(e.target) && !navbarToggle.contains(e.target)) {
-            if (navbar.classList.contains('navbar-mobile')) {
-              navbar.classList.remove('navbar-mobile', 'show');
-              const icon = navbarToggle.querySelector('i');
-              icon.classList.remove('bi-x');
-              icon.classList.add('bi-list');
-              document.body.style.overflow = 'auto';
-            }
-          }
+      // Close button functionality
+      if (closeButton) {
+        closeButton.addEventListener('click', function() {
+          mobileMenu.classList.remove('show');
+          const icon = navbarToggle.querySelector('i');
+          icon.classList.remove('bi-x');
+          icon.classList.add('bi-list');
+          document.body.style.overflow = 'auto';
         });
       }
+
+      // Close mobile menu when clicking on a link
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('show');
+          const icon = navbarToggle.querySelector('i');
+          icon.classList.remove('bi-x');
+          icon.classList.add('bi-list');
+          document.body.style.overflow = 'auto';
+        });
+      });
+
+      // Close mobile menu when clicking outside content
+      mobileMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMenu) {
+          mobileMenu.classList.remove('show');
+          const icon = navbarToggle.querySelector('i');
+          icon.classList.remove('bi-x');
+          icon.classList.add('bi-list');
+          document.body.style.overflow = 'auto';
+        }
+      });
 
       // Header scroll effect
       window.addEventListener('scroll', function() {
@@ -1451,10 +1499,11 @@
         }
       });
 
-      // Active nav link highlighting
+      // Active nav link highlighting for both desktop and mobile
       function highlightActiveSection() {
         const scrollPos = window.scrollY + 200;
         
+        // Update desktop nav
         navLinks.forEach(link => {
           const section = document.querySelector(link.getAttribute('href'));
           if (section) {
@@ -1467,12 +1516,27 @@
             }
           }
         });
+
+        // Update mobile nav
+        mobileNavLinks.forEach(link => {
+          const section = document.querySelector(link.getAttribute('href'));
+          if (section) {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+              mobileNavLinks.forEach(l => l.classList.remove('active'));
+              link.classList.add('active');
+            }
+          }
+        });
       }
 
       window.addEventListener('scroll', highlightActiveSection);
 
       // Smooth scrolling for navigation links
-      document.querySelectorAll('.nav-link, .btn-get-started').forEach(anchor => {
+      const allNavLinks = [...navLinks, ...mobileNavLinks];
+      allNavLinks.forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           const href = this.getAttribute('href');
           if (href && href.startsWith('#')) {
